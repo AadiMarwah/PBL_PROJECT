@@ -2011,7 +2011,12 @@ async function deleteAccount() {
     }
 }
 supabase.auth.onAuthStateChange((event, session) => {
+  console.log("AUTH EVENT:", event);
+
   if (event === "SIGNED_IN") {
-    window.location.href = "./index.html";
+    window.location.replace(
+      "https://aadimarwah.github.io/PBL_PROJECT/index.html"
+    );
   }
 });
+
