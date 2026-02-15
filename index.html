@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit - Comprehensive Cybersecurity Learning Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="orbit-logo loading-logo">
+                <div class="orbit-ring"></div>
+                <div class="orbit-center"></div>
+            </div>
+            <p class="loading-text">Loading Orbit...</p>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <!-- Logo/Brand -->
+            <div class="nav-brand">
+                <div class="orbit-logo">
+                    <div class="orbit-ring"></div>
+                    <div class="orbit-center"></div>
+                </div>
+                <span class="brand-text">Orbit</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-menu desktop-nav">
+                <a href="#" class="nav-link active" data-view="dashboard">Dashboard</a>
+                <a href="#" class="nav-link" data-view="roadmaps">Roadmaps</a>
+                <a href="#" class="nav-link" data-view="modules">Modules</a>
+                <a href="#" class="nav-link" data-view="progress">Progress</a>
+                <a href="#" class="nav-link" data-view="community">Community</a>
+            </nav>
+
+            <!-- Right Side Controls -->
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobile-nav">
+            <a href="#" class="mobile-nav-link active" data-view="dashboard">
+                <span class="mobile-nav-icon">📊</span>
+                Dashboard
+            </a>
+            <a href="#" class="mobile-nav-link" data-view="roadmaps">
+                <span class="mobile-nav-icon">🗺️</span>
+                Roadmaps
+            </a>
+            <a href="#" class="mobile-nav-link" data-view="modules">
+                <span class="mobile-nav-icon">📚</span>
+                Modules
+            </a>
+            <a href="#" class="mobile-nav-link" data-view="progress">
+                <span class="mobile-nav-icon">📈</span>
+                Progress
+            </a>
+            <a href="#" class="mobile-nav-link" data-view="community">
+                <span class="mobile-nav-icon">👥</span>
+                Community
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Dashboard View -->
+        <section id="dashboard-view" class="view active">
+            <div class="container">
+                <!-- Welcome Section -->
+                <div class="welcome-section">
+                    <div class="welcome-content">
+                        <h1 class="welcome-title">Welcome back to Orbit</h1>
+                        <p class="welcome-subtitle">Continue your cybersecurity mastery journey</p>
+                    </div>
+                    <div class="user-avatar">
+                        <div class="avatar-circle">
+                            <span class="avatar-text">OR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Overview -->
+                <div class="progress-overview">
+                    <div class="progress-card main-progress">
+                        <div class="progress-header">
+                            <h3>Learning Progress</h3>
+                            <span class="level-badge" id="current-level">Explorer</span>
+                        </div>
+                        <div class="xp-display">
+                            <div class="xp-info">
+                                <span class="xp-current" id="xp-current">0</span>
+                                <span class="xp-separator">/</span>
+                                <span class="xp-next" id="xp-next">150</span>
+                                <span class="xp-label">XP</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="xp-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-content">
+                                <span class="stat-number" id="lessons-completed">0</span>
+                                <span class="stat-label">Lessons Completed</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-content">
+                                <span class="stat-number" id="achievements-earned">0</span>
+                                <span class="stat-label">Achievements</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⚡</div>
+                            <div class="stat-content">
+                                <span class="stat-number" id="streak-days">0</span>
+                                <span class="stat-label">Day Streak</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Paths -->
+                <div class="recommended-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Recommended Learning Paths</h2>
+                        <button class="view-all-btn" onclick="app.showView('roadmaps')">View All Roadmaps</button>
+                    </div>
+                    <div class="recommended-grid" id="recommended-paths">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Recent Activity</h2>
+                    </div>
+                    <div class="activity-feed" id="recent-activity">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="achievements-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Latest Achievements</h2>
+                    </div>
+                    <div class="achievements-grid" id="achievements-display">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmaps View -->
+        <section id="roadmaps-view" class="view">
+            <div class="container">
+                <div class="screen-header">
+                    <h1 class="page-title">Learning Roadmaps</h1>
+                    <p class="page-subtitle">Choose your cybersecurity career path and follow structured learning journeys</p>
+                </div>
+
+                <div class="roadmaps-grid" id="roadmaps-container">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules View -->
+        <section id="modules-view" class="view">
+            <div class="container">
+                <div class="screen-header">
+                    <h1 class="page-title">Learning Modules</h1>
+                    <p class="page-subtitle">Comprehensive cybersecurity education organized by topics</p>
+                </div>
+
+                <div class="modules-grid" id="modules-container">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Module Detail View -->
+        <section id="module-view" class="view">
+            <div class="container" id="module-detail-container">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Room Detail View -->
+        <section id="room-view" class="view">
+            <div class="container" id="room-detail-container">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Lesson View -->
+        <section id="lesson-view" class="view">
+            <div class="container" id="lesson-detail-container">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Progress View -->
+        <section id="progress-view" class="view">
+            <div class="container">
+                <div class="screen-header">
+                    <h1 class="page-title">Learning Progress</h1>
+                    <p class="page-subtitle">Track your cybersecurity learning journey and achievements</p>
+                </div>
+
+                <div id="progress-detail">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Community View -->
+        <section id="community-view" class="view">
+            <div class="container">
+                <div class="screen-header">
+                    <h1 class="page-title">Community</h1>
+                    <p class="page-subtitle">Connect with fellow cybersecurity learners and professionals</p>
+                </div>
+
+                <div class="community-content">
+                    <div class="community-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-content">
+                                <span class="stat-number">15,000+</span>
+                                <span class="stat-label">Active Learners</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💬</div>
+                            <div class="stat-content">
+                                <span class="stat-number">2,500+</span>
+                                <span class="stat-label">Discussions</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎓</div>
+                            <div class="stat-content">
+                                <span class="stat-number">25,000+</span>
+                                <span class="stat-label">Completions</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="community-sections">
+                        <div class="discussion-board">
+                            <h3>Recent Discussions</h3>
+                            <div class="discussions-list">
+                                <div class="discussion-item">
+                                    <div class="discussion-content">
+                                        <h4>SIEM Implementation Best Practices</h4>
+                                        <p>Looking for advice on implementing SIEM in a hybrid cloud environment...</p>
+                                        <div class="discussion-meta">
+                                            <span class="author">Sarah Chen</span>
+                                            <span class="timestamp">2 hours ago</span>
+                                            <span class="replies">18 replies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="discussion-item">
+                                    <div class="discussion-content">
+                                        <h4>Career Path: Blue Team vs Red Team</h4>
+                                        <p>Seeking guidance on choosing between defensive and offensive security roles...</p>
+                                        <div class="discussion-meta">
+                                            <span class="author">Mike Rodriguez</span>
+                                            <span class="timestamp">5 hours ago</span>
+                                            <span class="replies">34 replies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="leaderboard">
+                            <h3>Top Learners This Week</h3>
+                            <div class="leaderboard-list">
+                                <div class="leaderboard-item">
+                                    <div class="rank">1</div>
+                                    <div class="learner-info">
+                                        <span class="name">Alex Thompson</span>
+                                        <span class="xp">1,250 XP</span>
+                                    </div>
+                                </div>
+                                <div class="leaderboard-item">
+                                    <div class="rank">2</div>
+                                    <div class="learner-info">
+                                        <span class="name">Jessica Park</span>
+                                        <span class="xp">980 XP</span>
+                                    </div>
+                                </div>
+                                <div class="leaderboard-item">
+                                    <div class="rank">3</div>
+                                    <div class="learner-info">
+                                        <span class="name">David Kumar</span>
+                                        <span class="xp">875 XP</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="orbit-logo small">
+                            <div class="orbit-ring"></div>
+                            <div class="orbit-center"></div>
+                        </div>
+                        <span class="footer-brand-text">Orbit</span>
+                    </div>
+                    <p class="footer-description">Professional cybersecurity education for the modern world.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Learning</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Roadmaps</a></li>
+                        <li><a href="#">Modules</a></li>
+                        <li><a href="#">Certifications</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">System Status</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <span class="social-icon">📧</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <span class="social-icon">🐦</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <span class="social-icon">💼</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <span class="social-icon">📱</span>
+                        </a>
+                    </div>
+                    <div class="newsletter-signup">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Orbit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Completion Feedback Modal -->
+    <div class="completion-feedback" id="completion-feedback" style="display: none;">
+        <div class="feedback-content">
+            <div class="feedback-icon">🎉</div>
+            <h3>Lesson Completed!</h3>
+            <p class="xp-earned">+25 XP earned</p>
+            <p class="level-info">Current Level: Explorer</p>
+        </div>
+    </div>
+    <div id="auth-modal" class="modal-overlay">
+        <div class="auth-container">
+            <h2 id="modal-title">Join Orbit</h2>
+            <p id="modal-desc">Enter your email to receive a verification link.</p>
+        
+            <input type="email" id="auth-email" placeholder="Gmail Address" required>
+            <input type="password" id="auth-password" placeholder="Create Password" required>
+        
+            <button id="auth-submit-btn" onclick="handleAuth()">Send Verification Link</button>
+        
+            <div class="auth-toggle">
+                <span id="toggle-text">Already have an account?</span>
+                <a href="#" onclick="toggleAuthMode()" id="toggle-link">Login</a>
+            </div>
+        </div>
+    </div>
+    <div id="user-portal" class="portal-box">
+        <h3>Explorer Command Center</h3>
+        <div class="stats-grid">
+            <p>User: <span id="username-stat">---</span></p>
+            <p>Total XP: <span id="xp-stat">0</span></p>
+        </div>
+
+        <hr class="cyber-divider">
+
+        <div class="action-buttons">
+            <button class="btn-sec" onclick="handleLogout()">Logout</button>
+            <button class="btn-warn" onclick="resetAllTasks()">Reset Progress</button>
+            <button class="btn-danger" onclick="deleteAccount()">Delete Account</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
